@@ -171,7 +171,7 @@ const Quiz = ({ onComplete }) => {
             className="nav-button skip" 
             onClick={handleSkip}
           >
-            {currentQuestion < questions.length - 1 ? 'Skip' : 'Finish'}
+            {currentQuestion < questions.length - 1 ? 'Next Option' : 'Finish'}
           </button>
         </div>
       </div>
