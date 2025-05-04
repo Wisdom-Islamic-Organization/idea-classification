@@ -4,7 +4,9 @@ import QuizApp from './components/QuizApp';
 function App() {
   return (
     <div className="app">
-      <QuizApp />
+      <div className="full-width-container">
+        <QuizApp />
+      </div>
     </div>
   );
 }
