@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Quiz from './Quiz';
 import Result from './Result';
 import Welcome from './Welcome';
+import Header from './Header';
 
 const QuizApp = () => {
   const [currentScreen, setCurrentScreen] = useState('welcome');
@@ -58,6 +59,8 @@ const QuizApp = () => {
 
   return (
     <div className="quiz-app">
+      <Header />
+      
       {currentScreen === 'welcome' && (
         <Welcome onStartQuiz={handleStartQuiz} />
       )}

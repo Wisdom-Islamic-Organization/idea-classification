@@ -75,3 +75,40 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Header styles */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #003366;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #213547;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .header-logo {
+    height: 40px;
+  }
+  
+  .header-title {
+    font-size: 1.4rem;
+  }
+}
