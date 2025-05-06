@@ -42,9 +42,9 @@ const QuizApp = () => {
     
     // Determine category based on score range
     let category = '';
-    if (totalScore >= 25) {
+    if (totalScore >= 22) {
       category = 'Visionary';
-    } else if (totalScore >= 18) {
+    } else if (totalScore >= 14) {
       category = 'Conscious';
     } else {
       category = 'Reckless';
