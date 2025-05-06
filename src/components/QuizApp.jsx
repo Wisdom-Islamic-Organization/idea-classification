@@ -20,13 +20,25 @@ const QuizApp = () => {
   const handleQuizComplete = (userAnswers) => {
     setAnswers(userAnswers);
     
+    console.log("All collected answers:", userAnswers);
+    
     // Calculate score
     let totalScore = 0;
-    Object.values(userAnswers).forEach(answer => {
-      if (answer === 'A') totalScore += 3;
-      else if (answer === 'B') totalScore += 2;
-      else if (answer === 'C') totalScore += 1;
+    
+    // Log all the answer keys to check if any are missing
+    console.log("Answer keys:", Object.keys(userAnswers));
+    
+    Object.entries(userAnswers).forEach(([questionId, answer]) => {
+      let pointsForQuestion = 0;
+      if (answer === 'A') pointsForQuestion = 3;
+      else if (answer === 'B') pointsForQuestion = 2;
+      else if (answer === 'C') pointsForQuestion = 1;
+      
+      console.log(`Question ${questionId}: Answer=${answer}, Points=${pointsForQuestion}`);
+      totalScore += pointsForQuestion;
     });
+    
+    console.log("Total calculated score:", totalScore);
     
     // Determine category based on score range
     let category = '';

@@ -98,15 +98,20 @@ const Quiz = ({ onComplete }) => {
   ];
 
   const handleAnswer = (questionId, answer) => {
+    console.log(`Selected answer for question ${questionId}: ${answer}`);
+    
     setAnswers({
       ...answers,
       [questionId]: answer
     });
 
+    console.log("Current answers state:", {...answers, [questionId]: answer});
+
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      onComplete(answers);
+      console.log("Quiz complete, submitting answers:", {...answers, [questionId]: answer});
+      onComplete({...answers, [questionId]: answer});
     }
   };
 
@@ -117,9 +122,12 @@ const Quiz = ({ onComplete }) => {
   };
 
   const handleSkip = () => {
+    console.log(`Skipping question ${questions[currentQuestion].id}`);
+    
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
+      console.log("Quiz complete after skip, submitting answers:", answers);
       onComplete(answers);
     }
   };
